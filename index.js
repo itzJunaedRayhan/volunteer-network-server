@@ -39,20 +39,7 @@ client.connect(err => {
     })
   })
 
-
-// delete with id
-  app.delete('deleteEvent/:id', (req, res) =>{
-    const id = ObjectID(req.params.id);
-    console.log('delete this', id);
-    Eventcollection.findOneAndDelete({_id: id})
-    .then(document => res.send(!!document.value))
-  })
 });
-
-
-
-
-
 app.listen(port, () => {
   console.log('Login success')
 })
